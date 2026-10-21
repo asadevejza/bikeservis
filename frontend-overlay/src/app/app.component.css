@@ -1,0 +1,6 @@
+main { max-width: 760px; margin: 2rem auto; font-family: system-ui, sans-serif; }
+.forma { display: flex; gap: .5rem; flex-wrap: wrap; }
+input, button { padding: .5rem; }
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+th, td { border-bottom: 1px solid #ddd; padding: .5rem; text-align: left; }
+.greska { color: #b00020; }

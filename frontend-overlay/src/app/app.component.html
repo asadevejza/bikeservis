@@ -1,0 +1,29 @@
+<main>
+  <h1>BikeServis</h1>
+
+  <h2>Zakaži termin</h2>
+  <div class="forma">
+    <input [(ngModel)]="klijentIme" placeholder="Ime klijenta" />
+    <input [(ngModel)]="usluga" placeholder="Usluga" />
+    <input type="datetime-local" [(ngModel)]="datum" />
+    <button (click)="zakazi()">Zakaži</button>
+  </div>
+  @if (greska) { <p class="greska">{{ greska }}</p> }
+
+  <h2>Moji termini</h2>
+  <table>
+    <thead><tr><th>Datum</th><th>Klijent</th><th>Usluga</th><th>Status</th></tr></thead>
+    <tbody>
+      @for (t of termini; track t.id) {
+        <tr>
+          <td>{{ t.datum | date: 'dd.MM.yyyy HH:mm' }}</td>
+          <td>{{ t.klijentIme }}</td>
+          <td>{{ t.usluga }}</td>
+          <td>{{ t.status }}</td>
+        </tr>
+      } @empty {
+        <tr><td colspan="4">Nema termina.</td></tr>
+      }
+    </tbody>
+  </table>
+</main>
